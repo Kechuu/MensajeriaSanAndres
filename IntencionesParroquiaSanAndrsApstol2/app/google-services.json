@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "655646598443",
+    "firebase_url": "https://definitiva-74275.firebaseio.com",
+    "project_id": "definitiva-74275",
+    "storage_bucket": "definitiva-74275.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655646598443:android:51eb6767cc8892a691516e",
+        "android_client_info": {
+          "package_name": "com.cabrerajesusk.intencionesparroquiasanandrsapstol1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655646598443-llts5nur65iqtokouto1c53tpkapkvh5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cabrerajesusk.intencionesparroquiasanandrsapstol1",
+            "certificate_hash": "d7aa6e18906a63c0d21536d600b1f12d861d9603"
+          }
+        },
+        {
+          "client_id": "655646598443-i587rtbk2c7toqk84qosr7ung95tud1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBknyiy4ekdeK8HYxQIZM-oyMW4ohUH13g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "655646598443-i587rtbk2c7toqk84qosr7ung95tud1f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

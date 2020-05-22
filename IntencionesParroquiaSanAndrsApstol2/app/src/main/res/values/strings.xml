@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Intenciones Parroquia San Andrés Apóstol</string>
+
+    <string name="btnCerrarSesion">Cerrar Sesion</string>
+    <string name="intenciones">Escribe tu intencion</string>
+</resources>
