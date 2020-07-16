@@ -2,9 +2,12 @@ package Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +44,16 @@ public class MainActivity extends AppCompatActivity {
     private Button cerrarSesion;
     private AdapterMensajes adapter;
     private String NOMBRE_USUARIO = "Intenciones";
+    private FrameLayout frameLayout;
+    private ImageView difuntos;
+    private TextView textDifuntos;
+    private ImageView accionDeGracias;
+    private TextView textAccionDeGracias;
+    private ImageView porLaSalud;
+    private TextView textPorLaSalud;
+    private ImageView options;
+    private boolean verificar =false;
+    private String opcionElegida="1";
 
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
@@ -57,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
         txtMensaje = (EditText) findViewById(R.id.txtMensaje);
         btnEnviar = (Button) findViewById(R.id.btnMensajeEnviar);
         cerrarSesion = (Button) findViewById(R.id.cerrarSesion);
+        frameLayout = (FrameLayout) findViewById(R.id.idFrameLayout);
+        difuntos = (ImageView) findViewById(R.id.idDifuntos);
+        textDifuntos = (TextView) findViewById(R.id.idTextDifuntos);
+        accionDeGracias = (ImageView) findViewById(R.id.idAccionDeGracias);
+        textAccionDeGracias = (TextView) findViewById(R.id.idTextAccionDeGracias);
+        porLaSalud = (ImageView) findViewById(R.id.idPorLaSalud);
+        textPorLaSalud = (TextView) findViewById(R.id.idTextPorLaSalud);
+        options = (ImageView) findViewById(R.id.idOptions);
         mAuth = FirebaseAuth.getInstance();
 
         database = FirebaseDatabase.getInstance();
@@ -70,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                databaseReference.child("Intenciones1").push().setValue(new MensajeEnviar(txtMensaje.getText().toString(), NOMBRE_USUARIO,"","1", ServerValue.TIMESTAMP));
+                databaseReference.child("Intenciones1").push().setValue(new MensajeEnviar(txtMensaje.getText().toString(), NOMBRE_USUARIO,"",opcionElegida, ServerValue.TIMESTAMP));
                 txtMensaje.setText("");
             }
         });
@@ -83,8 +104,75 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        options.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (verificar == false){
+                    frameLayout.setVisibility(View.VISIBLE);
+                    verificar=true;
+                }else{
+                    frameLayout.setVisibility(View.GONE);
+                    verificar=false;
+                }
+            }
+        });
 
-        databaseReference.child("Intenciones1").addChildEventListener(new ChildEventListener() {
+        difuntos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                options.setImageResource(R.drawable.image_difuntos);
+                opcionElegida="1";
+                frameLayout.setVisibility(View.GONE);
+            }
+        });
+
+        textDifuntos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                options.setImageResource(R.drawable.image_difuntos);
+                opcionElegida="1";
+                frameLayout.setVisibility(View.GONE);
+            }
+        });
+
+        accionDeGracias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                options.setImageResource(R.drawable.image_accion_de_gracias);
+                opcionElegida="2";
+                frameLayout.setVisibility(View.GONE);
+            }
+        });
+
+        textAccionDeGracias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                options.setImageResource(R.drawable.image_accion_de_gracias);
+                opcionElegida="2";
+                frameLayout.setVisibility(View.GONE);
+            }
+        });
+
+        porLaSalud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                options.setImageResource(R.drawable.image_por_la_salud);
+                opcionElegida="3";
+                frameLayout.setVisibility(View.GONE);
+            }
+        });
+
+        textPorLaSalud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                options.setImageResource(R.drawable.image_por_la_salud);
+                opcionElegida="3";
+                frameLayout.setVisibility(View.GONE);
+            }
+        });
+
+
+        databaseReference.child("Intenciones1").orderByChild("option").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, String s){
                 MensajeRecibir m = dataSnapshot.getValue(MensajeRecibir.class);

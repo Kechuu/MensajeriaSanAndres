@@ -10,8 +10,8 @@ public class MensajeRecibir extends Mensaje {
         this.hora = hora;
     }
 
-    public MensajeRecibir(String mensaje, String nombre, String fotoPerfil, String type_mensaje, Long hora) {
-        super(mensaje, nombre, fotoPerfil, type_mensaje);
+    public MensajeRecibir(String mensaje, String nombre, String fotoPerfil, String option, Long hora) {
+        super(mensaje, nombre, fotoPerfil, option);
         this.hora = hora;
     }
 

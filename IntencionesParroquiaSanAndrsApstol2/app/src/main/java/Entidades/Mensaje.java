@@ -4,16 +4,16 @@ public class Mensaje {
     private String mensaje;
     private String nombre;
     private String fotoPerfil;
-    private String type_mensaje;
+    private String option;
 
     public Mensaje() {
     }
 
-    public Mensaje(String mensaje, String nombre, String fotoPerfil, String type_mensaje) {
+    public Mensaje(String mensaje, String nombre, String fotoPerfil, String option) {
         this.mensaje = mensaje;
         this.nombre = nombre;
         this.fotoPerfil = fotoPerfil;
-        this.type_mensaje = type_mensaje;
+        this.option = option;
     }
 
     public String getMensaje() {
@@ -40,12 +40,12 @@ public class Mensaje {
         this.fotoPerfil = fotoPerfil;
     }
 
-    public String getTypr_mensaje() {
-        return type_mensaje;
+    public String getOption() {
+        return option;
     }
 
-    public void setTypr_mensaje(String typr_mensaje) {
-        this.type_mensaje = typr_mensaje;
+    public void setOption(String option) {
+        this.option = option;
     }
 
 }

@@ -12,8 +12,8 @@ public class MensajeEnviar extends Mensaje {
         this.hora = hora;
     }
 
-    public MensajeEnviar(String mensaje, String nombre, String fotoPerfil, String type_mensaje, Map hora) {
-        super(mensaje, nombre, fotoPerfil, type_mensaje);
+    public MensajeEnviar(String mensaje, String nombre, String fotoPerfil, String option, Map hora) {
+        super(mensaje, nombre, fotoPerfil, option);
         this.hora = hora;
     }
 

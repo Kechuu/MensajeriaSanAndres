@@ -32,7 +32,7 @@
                     android:id="@+id/nombreMensaje"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="kechu"
+                    android:hint="Nombre de usuario"
                     android:layout_weight="1"/>
                 <TextView
                     android:id="@+id/horaMensaje"
@@ -45,7 +45,9 @@
                 android:id="@+id/mensajeMensaje"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Bienvenid@, Bendiciones!"/>
+                android:text="@string/app_name"
+                android:textColor="#000000"
+                android:textSize="14dp"/>
         </LinearLayout>
 
     </LinearLayout>
